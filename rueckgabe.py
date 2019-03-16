@@ -24,17 +24,18 @@ def user_input():
             sicher=input('y=Ja, n=Nein \n')
             if sicher=='y':
                 print('Deine Eingabe wurde gespeichert')
+                return grund_auswahl
             elif sicher=='n':
                 print('Bitte gib erneut deinen Rückgabegrund ein: ')
                 user_input()
             else:
                 print('Bitte gib y für "Ja" und n für "nein" ein: \n')
-            return grund_auswahl
+                user_input()
         else :
             print('Bitte gib eine Zahl zwischen 1 und 5 als Rückgabegrund ein')
             user_input()
     else :
-        print('Du hast keine Zahl eingegeben')
+        print('Du hast keine Zahl von 1-5 eingegeben')
         user_input()
 rueckgabeGrund = user_input()
 #print(gruende[int(rueckgabeGrund)])
