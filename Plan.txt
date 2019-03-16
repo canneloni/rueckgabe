@@ -1,0 +1,11 @@
+Ziel:
+Rückgabegrund feststellen
+
+Herangehensweise:
+
+1. Schritt/Version
+Verschiedene Rückgabegründe präsentieren und nummerieren
+Durch Eingabe des Nutzers Rückgabegrund in eine Variable speichern
+
+2. Schritt/Version
+Rückgabegrund in eine Datei speichern
