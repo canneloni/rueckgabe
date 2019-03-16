@@ -39,4 +39,6 @@ print(gruende[rueckgabeGrund])
 speichern = open('test.txt', 'a')
 speichern.write(str(rueckgabeGrund))
 
+# Dies ist ein kleiner Test um zu gucken wie Einfach ein Update bei GIT ist.
+
 
