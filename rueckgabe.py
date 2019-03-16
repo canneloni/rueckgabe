@@ -17,24 +17,27 @@ for x in gruende:
     print (gruende[x])
 
 def user_input():
-    grund_auswahl = int(input('Bitte gib deinen Rückgabegrund ein: '))
-    if  grund_auswahl <=5 and grund_auswahl>=1:
-        print('Ist dein Rückgabegrund: \n'+ gruende[(grund_auswahl)])
-        sicher=input('y=Ja, n=Nein \n')
-        if sicher=='y':
-            print('Deine Eingabe wurde gespeichert')
-        elif sicher=='n':
-            print('Bitte gib erneut deinen Rückgabegrund ein: ')
+    grund_auswahl = input('Bitte gib deinen Rückgabegrund ein: ')
+    if grund_auswahl.isdigit():
+        if  int(grund_auswahl) <=5 and int(grund_auswahl)>=1:
+            print('Ist dein Rückgabegrund: \n'+ gruende[int(grund_auswahl)])
+            sicher=input('y=Ja, n=Nein \n')
+            if sicher=='y':
+                print('Deine Eingabe wurde gespeichert')
+            elif sicher=='n':
+                print('Bitte gib erneut deinen Rückgabegrund ein: ')
+                user_input()
+            else:
+                print('Bitte gib y für "Ja" und n für "nein" ein: \n')
+            return grund_auswahl
+        else :
+            print('Bitte gib eine Zahl zwischen 1 und 5 als Rückgabegrund ein')
             user_input()
-        else:
-            print('Bitte gib y für "Ja" und n für "nein" ein: \n')
-        # return grund_auswahl
     else :
-        print('Bitte gib eine Zahl zwischen 1 und 5 als Rückgabegrund ein')
+        print('Du hast keine Zahl eingegeben')
         user_input()
-
 rueckgabeGrund = user_input()
-print(gruende[rueckgabeGrund])
+#print(gruende[int(rueckgabeGrund)])
 
 speichern = open('test.txt', 'a')
 speichern.write(str(rueckgabeGrund))
