@@ -45,4 +45,5 @@ speichern.write(str(rueckgabeGrund))
 
 # Dies ist ein kleiner Test um zu gucken wie Einfach ein Update bei GIT ist.
 
+# Hier noch ein kleiner kommentar um eine Änderung zu bewirken
 
