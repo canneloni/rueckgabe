@@ -17,34 +17,32 @@ for x in gruende:
     print (gruende[x])
 
 def user_input():
-    while True:
-        grund_auswahl = input('Bitte gib deinen Rückgabegrund ein: ')
-        if grund_auswahl.isdigit():
-            if  int(grund_auswahl) <=5 and int(grund_auswahl)>=1:
-                print('Ist dein Rückgabegrund: \n'+ gruende[int(grund_auswahl)])
-                sicher=input('y=Ja, n=Nein \n')
-                if sicher=='y':
-                    print('Deine Eingabe wurde gespeichert')
-                    return grund_auswahl
-                    break
-                elif sicher=='n':
-                    print('Bitte gib erneut deinen Rückgabegrund ein: ')
-                else:
-                    print('Bitte gib y für "Ja" und n für "nein" ein: \n')
-            else :
-                print('Bitte gib eine Zahl zwischen 1 und 5 als Rückgabegrund ein.')
+    grund_auswahl = input('Bitte gib deinen Rückgabegrund ein: ')
+    if grund_auswahl.isdigit():
+        if  int(grund_auswahl) <=5 and int(grund_auswahl)>=1:
+            print('Ist dein Rückgabegrund: \n'+ gruende[int(grund_auswahl)])
+            sicher=input('y=Ja, n=Nein \n')
+            if sicher=='y':
+                print('Deine Eingabe wurde gespeichert')
+                return grund_auswahl
+            elif sicher=='n':
+                print('Bitte gib erneut deinen Rückgabegrund ein: ')
+                user_input()
+            else:
+                print('Bitte gib y für "Ja" und n für "nein" ein: \n')
+                user_input()
         else :
-            print('Du hast keine Zahl von 1-5 eingegeben')
+            print('Bitte gib eine Zahl zwischen 1 und 5 als Rückgabegrund ein')
             user_input()
+    else :
+        print('Du hast keine Zahl von 1-5 eingegeben')
+        user_input()
 rueckgabeGrund = user_input()
-
-print('Dies ist ein Test um zu gucken, ob die Ausgabe richtig gespeichert wird:')
-print(gruende[int(rueckgabeGrund)])
+#print(gruende[int(rueckgabeGrund)])
 
 speichern = open('test.txt', 'a')
 speichern.write(str(rueckgabeGrund))
 
 # Dies ist ein kleiner Test um zu gucken wie Einfach ein Update bei GIT ist.
-
-# Hier noch ein kleiner kommentar um eine Änderung zu bewirken
+# kleiner Kommentar um das zu pushen
 
